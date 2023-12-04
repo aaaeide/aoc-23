@@ -1,9 +1,11 @@
 package daytemplate
 
-func Part1(filename string) string {
+import "os"
+
+func Part1(file *os.File) string {
 	return "not implemented"
 }
 
-func Part2(filename string) string {
+func Part2(file *os.File) string {
 	return "not implemented"
 }
