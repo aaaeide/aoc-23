@@ -1,13 +1,14 @@
-package main
+package day01
 
 import (
 	"bufio"
 	"os"
+	"strconv"
 	"unicode"
 )
 
-func part1() {
-	file, _ := os.Open("input.txt")
+func Part1() string {
+	file, _ := os.Open("inputs/day01.txt")
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -24,11 +25,11 @@ func part1() {
 		sum += digits[0] * 10 + digits[len(digits) - 1]
 	}
 
-	println(int(sum))
+	return strconv.Itoa(sum)
 }
 
-func part2() {
-	file, _ := os.Open("input.txt")
+func Part2() string {
+	file, _ := os.Open("inputs/day01.txt")
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -78,13 +79,5 @@ func part2() {
 		sum += digits[0] * 10 + digits[1]
 	}
 
-	println(int(sum))
-}
-
-func main() {
-	println("Part 1:")
-	part1()
-	
-	println("Part 2:")
-	part2()
+	return strconv.Itoa(sum)
 }
