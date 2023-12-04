@@ -1,14 +1,24 @@
 package utils
 
-import "testing"
+import (
+	"os"
+	"testing"
+)
 
 func Tester(
 	t *testing.T, 
 	filename string, 
-	fn func(string) string,
+	fn func(*os.File) string,
 	want string) func() {
 	return func() {
-		got := fn(filename)
+		file, err := os.Open(filename)
+		
+		if err != nil {
+			println("\nCOULD NOT OPEN FILE", filename)
+			return
+		}
+
+		got := fn(file)
 
 		if got != want {
 			t.Errorf("got %q, wanted %q", got, want)

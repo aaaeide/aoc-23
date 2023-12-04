@@ -7,10 +7,7 @@ import (
 	"unicode"
 )
 
-func Part1(filename string) string {
-	file, _ := os.Open(filename)
-	defer file.Close()
-
+func Part1(file *os.File) string {
 	scanner := bufio.NewScanner(file)
 	sum  := 0
 
@@ -28,10 +25,7 @@ func Part1(filename string) string {
 	return strconv.Itoa(sum)
 }
 
-func Part2(filename string) string {
-	file, _ := os.Open(filename)
-	defer file.Close()
-
+func Part2(file *os.File) string {
 	scanner := bufio.NewScanner(file)
 	sum  := 0
 

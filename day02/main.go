@@ -38,10 +38,7 @@ func parseGame(gameString string) []map[string][]int {
 	return rounds
 }
 
-func solve(filename string) (int, int) {
-	file, _ := os.Open(filename)
-	defer file.Close()
-
+func solve(file *os.File) (int, int) {
 	scanner := bufio.NewScanner(file)
 	
 	gameId := 1
@@ -83,12 +80,12 @@ func solve(filename string) (int, int) {
 	return sumPart1, sumPart2
 }
 
-func Part1(filename string) string {
-	sol, _ := solve(filename)
+func Part1(file *os.File) string {
+	sol, _ := solve(file)
 	return strconv.Itoa(sol)
 }
 
-func Part2(filename string) string {
-	_, sol := solve(filename)
+func Part2(file *os.File) string {
+	_, sol := solve(file)
 	return strconv.Itoa(sol)
 }
