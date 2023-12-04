@@ -7,8 +7,8 @@ import (
 	"unicode"
 )
 
-func Part1() string {
-	file, _ := os.Open("inputs/day01.txt")
+func Part1(filename string) string {
+	file, _ := os.Open(filename)
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -28,8 +28,8 @@ func Part1() string {
 	return strconv.Itoa(sum)
 }
 
-func Part2() string {
-	file, _ := os.Open("inputs/day01.txt")
+func Part2(filename string) string {
+	file, _ := os.Open(filename)
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)

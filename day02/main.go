@@ -38,8 +38,8 @@ func parseGame(gameString string) []map[string][]int {
 	return rounds
 }
 
-func solve() (int, int) {
-	file, _ := os.Open("inputs/day02.txt")
+func solve(filename string) (int, int) {
+	file, _ := os.Open(filename)
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -83,12 +83,12 @@ func solve() (int, int) {
 	return sumPart1, sumPart2
 }
 
-func Part1() string {
-	sol, _ := solve()
+func Part1(filename string) string {
+	sol, _ := solve(filename)
 	return strconv.Itoa(sol)
 }
 
-func Part2() string {
-	_, sol := solve()
+func Part2(filename string) string {
+	_, sol := solve(filename)
 	return strconv.Itoa(sol)
 }
