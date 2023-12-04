@@ -27,7 +27,9 @@ func runDay(
 	part2 func(*os.File) string,
 ) {
 
-	println("\n==================\nDay 0" + i + "\n------------------")
+	println("\n==================")
+	println("Day 0" + i)
+	println("------------------")
 	println("Part 1:", runPart(i, part1))
 	println("Part 2:", runPart(i, part2))
 	println("==================")
