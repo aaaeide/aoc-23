@@ -14,7 +14,7 @@ func Tester(
 		file, err := os.Open(filename)
 		
 		if err != nil {
-			println("\nCOULD NOT OPEN FILE", filename)
+			t.Errorf("\nCOULD NOT OPEN FILE " + filename)
 			return
 		}
 
