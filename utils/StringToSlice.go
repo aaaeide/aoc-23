@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-func StringToSliceInt(lst string, sep string) []int {
+func StringToSliceInt(lst string, sep string) ([]int, error) {
 	var ints []int
 
 	for _, numStr := range strings.Split(lst, sep) {
@@ -15,11 +15,11 @@ func StringToSliceInt(lst string, sep string) []int {
 
 		num, err := strconv.Atoi(numStr)
 		if err != nil {
-			panic("Error converting string to int: " + err.Error())
+			return []int{}, err
 		}
 
 		ints = append(ints, num)
 	}
 
-	return ints
+	return ints, nil
 }

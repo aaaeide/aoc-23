@@ -20,8 +20,8 @@ func parseCards(file *os.File) map[int]int {
 		match := cardPtn.FindAllStringSubmatch(scanner.Text(), -1)[0]
 		
 		cardId, _ := strconv.Atoi(match[1])
-		winning := utils.StringToSliceInt(match[2], " ")
-		actual := utils.StringToSliceInt(match[3], " ")
+		winning, _ := utils.StringToSliceInt(match[2], " ")
+		actual, _ := utils.StringToSliceInt(match[3], " ")
 		numWinning := len(utils.Intersection[int](winning, actual))
 
 		winsPerCard[cardId] = numWinning
