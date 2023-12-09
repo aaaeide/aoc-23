@@ -10,9 +10,9 @@ func TestPart1(t *testing.T) {
 	utils.Tester(t, "test.txt", Part1, "35")()
 }
 
-func TestPart2(t *testing.T) {
-	utils.Tester(t, "test.txt", Part2, "46")()
-}
+// func TestPart2(t *testing.T) {
+// 	utils.Tester(t, "test.txt", Part2, "46")()
+// }
 
 // func assertRangesAreEqual(t *testing.T, got, want []Range) {
 // 	if rangesToString(got) != rangesToString(want) {

@@ -25,13 +25,13 @@ func (r Range) Length() int {
 	return r.end - r.start + 1
 }
 
-func rangesToString(rs []Range) string {
-	out := "[ "
-	for _, r := range rs {
-		out += r.ToString() + " "
-	}
-	return out + "]"
-}
+// func rangesToString(rs []Range) string {
+// 	out := "[ "
+// 	for _, r := range rs {
+// 		out += r.ToString() + " "
+// 	}
+// 	return out + "]"
+// }
 
 func sortRanges(rs []Range) []Range {
 	sort.Slice(rs, func(i, j int) bool {
@@ -111,9 +111,6 @@ func (A Range) Union(B Range) (Range, error) {
 }
 
 func doCoalesce(in, out []Range) []Range {
-	// println("\ndocoal")
-	// println(rangesToString(in))
-	// println(rangesToString(out))
 	if len(in) == 0 {
 		return out
 	}
@@ -138,33 +135,23 @@ func coalesce(rs []Range) []Range {
 }
 
 func transform(rs []Range, d, s Range) []Range {
-	println("\n\n\ntransform")
-	println(rangesToString(rs))
-	println(d.ToString(), s.ToString())
 	out := []Range{}
 	null := Range{}
 
 	for _, r := range rs {
-		println("checking r=" + r.ToString()+" against s="+s.ToString())
 		if r.Intersect(s) == null {
-			println("no intersection")
 			out = append(out, r)
 			continue
 		}
 
-		println("intersects:")
 
 		res := r.Minus(s)
-		println("\twithout r\\s="+rangesToString(res))
 
 		diff := d.start - s.start
-		println("\tdiff=",diff)
 		start := u.Tif(r.start < s.start, s.start, r.start)
 		end := u.Tif(r.end < s.end, r.end, s.end)
-		println("\tend=", end)
 
 		res = append(res, Range{start + diff, end + diff})
-		println("\tresult of transformation r~(s,d)="+rangesToString(res))
 
 		out = append(out, res...)
 	}
@@ -192,7 +179,6 @@ func Part2(file *os.File) string {
 			continue
 		}
 
-		fmt.Println(nums)
 		rs = transform(rs, Range{nums[0], nums[0] + nums[2] - 1}, Range{nums[1], nums[1] + nums[2] - 1})
 	}
 
