@@ -7,9 +7,9 @@ package daytemplate
 // )
 
 // func TestPart1(t *testing.T) {
-// 	utils.Tester(t, "test1.txt", Part1, "142")()
+// 	utils.Tester(t, "test1.txt", Part1, "_")()
 // }
 
 // func TestPart2(t *testing.T) {
-// 	utils.Tester(t, "test2.txt", Part2, "281")()
+// 	utils.Tester(t, "test2.txt", Part2, "_")()
 // }
