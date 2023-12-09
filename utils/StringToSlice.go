@@ -7,19 +7,18 @@ import (
 
 func StringToSliceInt(lst string, sep string) ([]int, error) {
 	var ints []int
+	var err error = nil
 
 	for _, numStr := range strings.Split(lst, sep) {
 		if numStr == "" {
 			continue
 		}
 
-		num, err := strconv.Atoi(numStr)
-		if err != nil {
-			return []int{}, err
-		}
+		var num int
+		num, err = strconv.Atoi(numStr)
 
 		ints = append(ints, num)
 	}
 
-	return ints, nil
+	return ints, err
 }
