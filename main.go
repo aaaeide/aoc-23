@@ -14,6 +14,7 @@ import (
 	"github.com/aaaeide/aoc-23/day09"
 	"github.com/aaaeide/aoc-23/day10"
 	"github.com/aaaeide/aoc-23/day11"
+	"github.com/aaaeide/aoc-23/day13"
 )
 
 func runPart(i string, part func(*os.File) string) string {
@@ -55,4 +56,5 @@ func main() {
 	runDay("09", day09.Part1, day09.Part2)
 	runDay("10", day10.Part1, day10.Part2)
 	runDay("11", day11.Part1, day11.Part2)
+	runDay("13", day13.Part1, day13.Part2)
 }
