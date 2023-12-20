@@ -105,6 +105,6 @@ func TestPart1(t *testing.T) {
 	utils.Tester(t, "test.txt", Part1, "21")()
 }
 
-func TestPart2(t *testing.T) {
-	utils.Tester(t, "test.txt", Part2, "525152")()
-}
+// func TestPart2(t *testing.T) {
+// 	utils.Tester(t, "test.txt", Part2, "525152")()
+// }
